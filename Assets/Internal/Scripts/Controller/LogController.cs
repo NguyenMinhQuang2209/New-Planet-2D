@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class LogController : MonoBehaviour
@@ -21,5 +20,9 @@ public class LogController : MonoBehaviour
     public void Log(Exception e)
     {
         Debug.Log(e.Message);
+    }
+    public void Log(LanguageOptions options)
+    {
+        Debug.Log(LanguageController.instance.GetValue(options));
     }
 }

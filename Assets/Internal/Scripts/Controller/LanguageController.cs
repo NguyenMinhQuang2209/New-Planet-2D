@@ -53,4 +53,5 @@ public class LanguageItemInit
 public enum LanguageOptions
 {
     Inventory_Title,
+    Error_Inventory_Full
 }

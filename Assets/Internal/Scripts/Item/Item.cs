@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     [Header("Inventory setup")]
     public Sprite itemImage;
-    public Vector2 imgSize = new(70f,70f);
+    public Vector2 imgSize = new(70f, 70f);
     [SerializeField] private int maxQuantity = 1;
     [SerializeField] private bool useStack = false;
     [SerializeField] private ItemName itemName;
@@ -21,6 +21,10 @@ public class Item : MonoBehaviour
     {
         return useStack;
     }
+    public void SetCurrentQuantity(int v)
+    {
+        SetCurrentQuantity(v);
+    }
     public ItemName GetName()
     {
         return itemName;
@@ -29,5 +33,10 @@ public class Item : MonoBehaviour
     public string GetQuantityShowTxt()
     {
         return useStack ? GetCurrentQuantity().ToString() : "";
+    }
+
+    public virtual void ItemInteract()
+    {
+
     }
 }
